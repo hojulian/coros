@@ -111,7 +111,7 @@ RUN mkdir /code-server &&\
 
 # get and setup novnc
 WORKDIR /novnc
-RUN git clone https://github.com/novnc/noVNC.git
+RUN git clone --branch v1.1.0 https://github.com/novnc/noVNC.git
 
 # fix for offline mode -> prefatch websockify
 RUN cd ./noVNC/utils && git clone https://github.com/novnc/websockify
