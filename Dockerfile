@@ -103,6 +103,12 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
         ros-melodic-desktop-full &&\
         rm -rf /var/lib/apt/lists/*
 
+# copy some needed libs	
+COPY ./libs libs/	
+
+# insatll libpng12	
+RUN dpkg -i /libs/libpng12-0_1.2.54-1ubuntu1.1_amd64.deb
+
 # get vs code server
 RUN mkdir /code-server &&\ 
     wget -qO- https://github.com/cdr/code-server/releases/download/2.1523-vsc1.38.1/code-server2.1523-vsc1.38.1-linux-x86_64.tar.gz \

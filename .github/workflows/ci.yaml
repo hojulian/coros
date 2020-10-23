@@ -27,7 +27,7 @@ jobs:
         with:
           push: true
           tags: cosi119/coros:latest
-          no-cache: true
+          no-cache: false
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
